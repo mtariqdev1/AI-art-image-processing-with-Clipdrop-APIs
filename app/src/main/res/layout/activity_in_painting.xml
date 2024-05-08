@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InPainting">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pickImg"
+        android:layout_margin="10dp"
+        android:text="Pick Image"
+        android:textColor="#ffffff"
+        app:layout_constraintVertical_bias=".05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/orignalImg"
+        app:layout_constraintTop_toBottomOf="@+id/pickImg"
+        app:layout_constraintBottom_toTopOf="@+id/undo"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/responseImg"
+        app:layout_constraintTop_toBottomOf="@+id/pickImg"
+        app:layout_constraintBottom_toTopOf="@+id/undo"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+    <com.example.clipdropapicheck.utils.MaskView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/maskView"
+        app:layout_constraintTop_toTopOf="@+id/orignalImg"
+        app:layout_constraintBottom_toBottomOf="@+id/orignalImg"
+        app:layout_constraintStart_toStartOf="@+id/orignalImg"
+        app:layout_constraintEnd_toEndOf="@+id/orignalImg"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/undo"
+        android:layout_margin="10dp"
+        android:text="Undo"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/redo"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/redo"
+        android:layout_margin="10dp"
+        android:text="Redo"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/maskImg"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/maskImg"
+        android:layout_margin="10dp"
+        android:text="Mask Image"
+        android:textColor="#ffffff"
+        app:layout_constraintVertical_bias=".95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
